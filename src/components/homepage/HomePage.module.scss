@@ -1,0 +1,9 @@
+@import '../../data/Variables';
+
+.container {
+  width: 100%;
+  background-color: $article-background;
+  padding: 20px 15px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}

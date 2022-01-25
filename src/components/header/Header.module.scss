@@ -1,0 +1,97 @@
+@import '../../data/Variables';
+
+
+@font-face {
+    font-family: iranSans;
+    src: url('../../fonts/Iranian\ Sans.ttf');
+}
+body {
+  direction: rtl;
+  font-family: iranSans;
+  font-size: 12px;
+}
+.container {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  gap: 1%;
+  align-items: stretch;
+}
+.one {
+  flex: 5%;
+  align-self: center;
+  .logo {
+    background: url("../../images/bc60cf05.svg") no-repeat;
+    background-size: contain;
+    display: block;
+    height: 33px;
+    width: 118px;
+  }
+}
+.two {
+  flex: 63%;
+  position: relative;
+  .input:focus {
+    outline: none;
+    border: none;
+  }
+  margin-right: 10px;
+
+  .input {
+    background-color: $input-background;
+    background-color: #f0f0f1;
+    border: 0;
+    border-radius: 10px;
+    width: 63%;
+    height: 45px;
+    position: relative;
+    text-indent: 60px;
+  }
+  .input::placeholder {
+    color: $input-placeholder;
+    font-family: iranSans;
+    font-size: 12px;
+  }
+  .search {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    font-size: 22px;
+    color: $input-icon;
+  }
+}
+.three {
+  flex: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  .signUp {
+    border: 1px solid $input-placeholder;
+    border-radius: 10px;
+    padding: 0px 8px;
+    display: inline-block;
+    color: $input-placeholder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    height: 100%;
+    margin-left: 5px;
+    .user {
+        color: $input-icon;
+        margin-left: 5px;
+        font-size: 17px;
+    }
+  }
+  .border {
+    border-right: 1px solid $input-icon;
+    height: 30px;
+  }
+  .cart {
+    padding: 0px 15px;
+    color: $input-icon;
+    font-size: 20px;
+    box-sizing: content-box;
+  }
+}
