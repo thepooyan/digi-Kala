@@ -47,7 +47,7 @@
         margin-top: 10px;
         color: $text-gray;
         &.error {
-          border: 1px solid $input-error;
+          border: 1px solid $login-input-error;
         }
         &:focus {
           border: 1px solid $link;
@@ -59,7 +59,7 @@
       margin-top: 10px;
       display: inline-block;
       font-weight: bold;
-      color: $input-error;
+      color: $login-input-error;
     }
     > button {
       margin-top: 30px;
