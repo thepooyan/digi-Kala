@@ -3,25 +3,32 @@ import styles from './Login.module.scss'
 import logo from '../../images/logo.svg'
 import Button from '../general/Button'
 import { useNavigate } from 'react-router-dom'
-// import { LoginContext } from '../../data/GeneralInfo'
+import { LoginContext } from '../../data/GeneralInfo'
+
 
 const Login = () => {
 
   let navigate = useNavigate();
   const [isError, setIsError] = useState(false)
-  // const [isLoggedIn, setIsLoggedIn] = useContext(LoginContext)
+  const [isLoggedIn, setIsLoggedIn] = useContext(LoginContext)
   let Username = useRef();
   let Password = useRef();
+  const [errorMassage, setErrorMassage] = useState('')
 
   const loginHandler = (e) => {
     e.preventDefault();
-    if (Username.current.value.trim().length===0||Password.current.value.trim().length===0)
-    setIsError(true)
+    if (Username.current.value.trim().length===0||Password.current.value.trim().length===0) {
+      setErrorMassage('لطفا کادر ها را خالی نگذارید')
+      setIsError(true)
+    } else {
     if (Username.current.value==='pooyan'&&Password.current.value==='1234')
     {
-    // setIsLoggedIn(true)
+    setIsLoggedIn(true)
     navigate('/')
-    }
+    } else {
+      setErrorMassage('اطلاعات اشتباه میباشد')
+      setIsError(true)
+    }}
   }
 
 
@@ -51,7 +58,7 @@ const Login = () => {
             <div className={styles.inputBox}>
             <input className={styles[`${isError ?'error':''}`]} ref={Username} placeholder='Username' type="text" onBlur={inErrorRemoved}/>
             <input className={styles[`${isError ?`error`:''}`]} ref={Password} placeholder='Password' type="text" onBlur={inErrorRemoved}/>
-            {isError&&<span className={styles.errorMassage}>لطفا کادر ها را خالی نگذارید</span>}
+            {isError&&<span className={styles.errorMassage}>{errorMassage}</span>}
             </div>
             <Button type='submit'>ورود</Button>
               <p className={styles.agreement}>
