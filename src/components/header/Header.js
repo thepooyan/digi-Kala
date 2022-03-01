@@ -3,6 +3,7 @@ import styles from "./Header.module.scss";
 import { faSearch , faShoppingCart , faUser} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import '../../fonts/Iranian Sans.ttf'
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -16,10 +17,10 @@ const HomePage = () => {
             <FontAwesomeIcon icon={faSearch} className={styles.search}/>
         </div>
         <div className={styles.three}>
-            <div className={styles.signUp}>
+            <Link to='/login' className={styles.signUp}>
                 <FontAwesomeIcon icon={faUser} className={styles.user}/>
                 ورود به حساب کاربری
-            </div>
+            </Link>
             <div className={styles.border}></div>
             <FontAwesomeIcon icon={faShoppingCart} className={styles.cart}/>
         </div>

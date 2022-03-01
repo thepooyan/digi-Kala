@@ -1,3 +1,4 @@
+@import '../../data/Variables';
 @font-face {
     font-family: iranSans;
     src: url('../../fonts/Iranian\ Sans.ttf');
@@ -9,4 +10,8 @@ body {
 * {
     box-sizing: border-box;
     height: auto;
+}
+a {
+    color: $link;
+    text-decoration: none;
 }

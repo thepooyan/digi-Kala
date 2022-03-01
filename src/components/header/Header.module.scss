@@ -21,7 +21,7 @@ body {
   flex: 5%;
   align-self: center;
   .logo {
-    background: url("../../images/bc60cf05.svg") no-repeat;
+    background: url("../../images/logo.svg") no-repeat;
     background-size: contain;
     display: block;
     height: 33px;
@@ -67,6 +67,7 @@ body {
   align-items: center;
   gap: 5px;
   .signUp {
+    text-decoration: none;
     border: 1px solid $input-placeholder;
     border-radius: 10px;
     padding: 0px 8px;
