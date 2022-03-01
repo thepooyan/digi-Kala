@@ -7,13 +7,13 @@ import Footer from '../footer/Footer'
 
 const Main = () => {
     return (
-        <div>
+        <>
             <Header/>
             <div className={styles.container}>
                 <Outlet/>
             </div>
             <Footer/>
-        </div>
+        </>
     )
 }
 
