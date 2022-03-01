@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import { faSearch , faShoppingCart , faUser, faSortDown, faSignOutAlt, faShoppingBag, faHeart, faComment, faCircle, faUserCircle} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -15,8 +15,16 @@ const HomePage = () => {
     setIsLoginClicked(!isLoginClicked)
   }
   const logOut = () => {
+    localStorage.setItem('isLoggedIn',false)
     setIsLoggedIn(false)
   }
+
+  useEffect(() => {
+    if (localStorage.getItem('isLoggedIn')==="true"&&isLoggedIn===false) {
+    setIsLoggedIn(true)
+    }
+  }, [])
+  
 
   return (
     <div>

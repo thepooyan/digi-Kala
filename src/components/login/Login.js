@@ -21,8 +21,8 @@ const Login = () => {
       setErrorMassage('لطفا کادر ها را خالی نگذارید')
       setIsError(true)
     } else {
-    if (Username.current.value==='pooyan'&&Password.current.value==='1234')
-    {
+    if (Username.current.value==='pooyan'&&Password.current.value==='1234') {
+    localStorage.setItem('isLoggedIn', true)
     setIsLoggedIn(true)
     navigate('/')
     } else {
