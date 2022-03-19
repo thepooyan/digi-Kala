@@ -19,13 +19,13 @@ body {
 .one {
   flex: 5%;
   align-self: center;
-  .logo {
-    background: url("../../images/logo.svg") no-repeat;
-    background-size: contain;
-    display: block;
-    height: 33px;
-    width: 118px;
-  }
+  // .logo {
+  //   background: url("../../images/logo.svg") no-repeat;
+  //   background-size: contain;
+  //   display: block;
+  //   height: 33px;
+  //   width: 118px;
+  // }
 }
 .two {
   flex: 63%;

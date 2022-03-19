@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from 'react'
 import styles from './Login.module.scss'
-import logo from '../../images/logo.svg'
+import logo from '../../assets/images/logo.svg'
 import Button from '../general/Button'
 import { useNavigate } from 'react-router-dom'
 import { LoginContext } from '../../data/GeneralInfo'

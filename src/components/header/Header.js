@@ -6,6 +6,8 @@ import '../../fonts/Iranian Sans.ttf'
 import { Link } from "react-router-dom";
 import { LoginContext } from "../../data/GeneralInfo";
 
+import logo from '../../assets/images/logo.svg'
+
 const HomePage = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useContext(LoginContext);
@@ -30,7 +32,7 @@ const HomePage = () => {
     <div>
       <div className={styles.container}>
         <div className={styles.one}>
-          <div className={styles.logo}></div>
+          <img src={logo} className={styles.logo} ></img>
         </div>
         <div className={styles.two}>
             <input className={styles.input} type="text" name="" id="" placeholder="جستجو در دیجی کالا..."/>
