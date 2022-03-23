@@ -2,14 +2,14 @@
 .card {
     width: 100%;
     background-color: white;
-    border: 1px solid #f0f0f1;;
+    border: 1px solid $products-card-border;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 20px 0;
     .img {
-        width: 100%;
+        width: 65%;
         margin: 15px 0;
     }
 
@@ -27,5 +27,13 @@
                 content: '  تومان';
             }
         }
+    }
+
+    transition: .2s;
+    &:hover {
+        z-index: 2;
+
+        box-shadow: 0 0 7px $products-card-shadow;
+        cursor: pointer;
     }
 }
