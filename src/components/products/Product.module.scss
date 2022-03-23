@@ -1,0 +1,31 @@
+@import '../../data/Variables';
+.card {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #f0f0f1;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0;
+    .img {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    .infoBox {
+        width: 100%;
+        padding: 0 20px;
+        .title {
+            width: 100%;
+            text-align: right;
+        }
+        .price {
+            width: 100%;
+            text-align: left;
+            &::after {
+                content: '  تومان';
+            }
+        }
+    }
+}
