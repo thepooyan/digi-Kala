@@ -7,6 +7,20 @@
     font-family: iranYekan;
     src: url('../../fonts/iranyekanwebregular.e31c09af.woff2');
 }
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: #cdcdcd;
+}
+::-webkit-scrollbar-thumb {
+  background: white; 
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $button-red;
+}
+/*scrollbar*/
 body {
     font-family: iranSnas;
     font-size: 12px;
