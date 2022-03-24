@@ -3,7 +3,7 @@ import styles from "./Header.module.scss";
 import { faSearch, faShoppingCart, faUser, faSortDown, faSignOutAlt, faShoppingBag, faHeart, faComment, faCircle, faUserCircle, faBars, faFireAlt, faTicketAlt, faPercent, faMapMarkerAlt} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../fonts/Iranian Sans.ttf";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { LoginContext } from "../../data/GeneralInfo";
 
 import logo from "../../assets/images/logo.svg";
@@ -29,9 +29,9 @@ const HomePage = () => {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.one}>
+        <Link to='/' className={styles.one}>
           <img src={logo} className={styles.logo}></img>
-        </div>
+        </Link>
         <div className={styles.two}>
           <input
             className={styles.input}
@@ -105,9 +105,9 @@ const HomePage = () => {
             دسته‌بندی کالا‌ها</span>
 
           <div className={styles.partOne}>
-            <span>
+            <NavLink to='/bestseller' className={({isActive})=> styles[isActive?'activeItem':'item']} >
               <FontAwesomeIcon icon={faFireAlt} className={styles.icon}/>
-              پر‌فروش‌ترین‌ها</span>
+              پر‌فروش‌ترین‌ها</NavLink>
             <span>
               <FontAwesomeIcon icon={faTicketAlt} className={styles.icon}/>
               تخفیف‌ها و پیشنهاد‌ها</span>

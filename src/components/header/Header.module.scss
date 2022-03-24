@@ -169,7 +169,8 @@ body {
   .icon {
     margin-left: 5px;
   }
-  span {
+  span,.item {
+    color: $text-gray;
     padding: 13px 15px;
     border-bottom: 2px solid transparent;
     transition: .35s;
@@ -177,6 +178,11 @@ body {
       cursor: pointer;
       border-bottom: 2px solid $button-red;
     }
+  }
+  .activeItem {
+    color: $text-gray;
+    padding: 13px 15px;
+    background-color: $article-background;
   }
 
   .right {
