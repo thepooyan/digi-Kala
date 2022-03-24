@@ -108,9 +108,9 @@ const HomePage = () => {
             <NavLink to='/bestseller' className={({isActive})=> styles[isActive?'activeItem':'item']} >
               <FontAwesomeIcon icon={faFireAlt} className={styles.icon}/>
               پر‌فروش‌ترین‌ها</NavLink>
-            <span>
+            <NavLink to='/discounts' className={({isActive})=> styles[isActive?'activeItem':'item']} >
               <FontAwesomeIcon icon={faTicketAlt} className={styles.icon}/>
-              تخفیف‌ها و پیشنهاد‌ها</span>
+              تخفیف‌ها و پیشنهاد‌ها</NavLink>
             <span>
               <FontAwesomeIcon icon={faPercent} className={styles.icon}/>
               شگفت‌انگیز‌ها</span>
