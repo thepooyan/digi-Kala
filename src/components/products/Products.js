@@ -5,7 +5,6 @@ import styles from './Products.module.scss'
 
 const Products = () => {
     const products = useSelector((state) => state)
-    console.log(products)
   return (
     <div className={styles.wrapper}>
         {products.map((item,index)=>{

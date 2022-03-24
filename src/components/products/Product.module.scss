@@ -53,6 +53,15 @@
       font-size: 13px;
       padding-left: 13px;
     }
+    .seller {
+        text-align: center;
+        margin: 3px 0;
+        > * {
+            color: rgb(255, 81, 0);
+            margin-left: 5px;
+            font-size: 15px;
+        }
+    }
   }
 
   transition: 0.2s;
