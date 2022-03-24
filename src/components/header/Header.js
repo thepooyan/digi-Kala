@@ -49,9 +49,11 @@ const HomePage = () => {
               ورود به حساب کاربری
             </Link>
           ) : (
-            <div className={styles.loggedIn} onClick={loginClickHandler}>
+            <div className={styles.loggedIn}>
+              <div onClick={loginClickHandler} className={styles.onclick}>
               <FontAwesomeIcon icon={faUser} className={styles.user} />
               <FontAwesomeIcon icon={faSortDown} className={styles.tic} />
+              </div>
               {isLoginClicked && (
                 <div className={styles.extend}>
                   <div className={styles.item}>

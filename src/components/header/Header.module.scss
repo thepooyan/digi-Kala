@@ -91,6 +91,13 @@ body {
       align-items: center;
       gap: 5px;
       margin-left: 10px;
+      .onclick {
+        width: 29px;
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+      }
       .user {
         color: $icon;
         font-size: 20px;
