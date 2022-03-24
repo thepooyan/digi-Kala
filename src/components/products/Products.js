@@ -8,9 +8,9 @@ const Products = () => {
     console.log(products)
   return (
     <div className={styles.wrapper}>
-        {products.map(item=>{
+        {products.map((item,index)=>{
          return (
-             <Product item={item}/>
+             <Product item={item} index={index}/>
          )
         })}
     </div>

@@ -11,6 +11,7 @@ const Product = (props) => {
             <p className={styles.price}>{props.item.price}
             {props.item.discount !== 0 ? <span className={styles.discount}>{props.item.discount}</span>: ''}
             </p>
+            <span className={styles.index}>{props.index+1}</span>
         </div>
 
     </div>
