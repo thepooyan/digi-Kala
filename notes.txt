@@ -1,0 +1,7 @@
+todo:
+add module to login page
+fix login menue problem
+add search bar
+query nav link
+fetch api and connection to the server
+app products and remove them. make redux functions. maybe multiple reducers?
