@@ -1,11 +1,16 @@
 import { faFire } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import styles from './Product.module.scss'
 
 const Product = (props) => {
+    const navigation = useNavigate();
+    const navigate = () => {
+        navigation(`/${props.item.id}`)
+    }
     return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={navigate}>
         <img src={props.item.pic} alt={props.name} className={styles.img}/>
 
         <div className={styles.infoBox}>
