@@ -3,10 +3,11 @@ import styles from "./Header.module.scss";
 import { faSearch, faShoppingCart, faUser, faSortDown, faSignOutAlt, faShoppingBag, faHeart, faComment, faCircle, faUserCircle, faBars, faFireAlt, faTicketAlt, faPercent, faMapMarkerAlt} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../fonts/Iranian Sans.ttf";
-import { Link, NavLink, useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { LoginContext } from "../../data/GeneralInfo";
 
 import logo from "../../assets/images/logo.svg";
+import QueryNavLink from "../../data/QueryNavLink";
 
 const HomePage = () => {
   const [isLoggedIn, setIsLoggedIn] = useContext(LoginContext);
@@ -35,9 +36,9 @@ const HomePage = () => {
   return (
     <>
       <div className={styles.container}>
-        <Link to='/' className={styles.one}>
+        <QueryNavLink to='/' className={styles.one}>
           <img src={logo} className={styles.logo}></img>
-        </Link>
+        </QueryNavLink>
         <div className={styles.two}>
           <input
             className={styles.input}
@@ -115,12 +116,13 @@ const HomePage = () => {
             دسته‌بندی کالا‌ها</span>
 
           <div className={styles.partOne}>
-            <NavLink to='/bestseller' className={({isActive})=> styles[isActive?'activeItem':'item']} >
+            <QueryNavLink to='/bestseller' className={({isActive})=> styles[isActive?'activeItem':'item']} >
+            
               <FontAwesomeIcon icon={faFireAlt} className={styles.icon}/>
-              پر‌فروش‌ترین‌ها</NavLink>
-            <NavLink to='/discounts' className={({isActive})=> styles[isActive?'activeItem':'item']} >
+              پر‌فروش‌ترین‌ها</QueryNavLink>
+            <QueryNavLink to='/discounts' className={({isActive})=> styles[isActive?'activeItem':'item']} >
               <FontAwesomeIcon icon={faTicketAlt} className={styles.icon}/>
-              تخفیف‌ها و پیشنهاد‌ها</NavLink>
+              تخفیف‌ها و پیشنهاد‌ها</QueryNavLink>
             <span>
               <FontAwesomeIcon icon={faPercent} className={styles.icon}/>
               شگفت‌انگیز‌ها</span>
