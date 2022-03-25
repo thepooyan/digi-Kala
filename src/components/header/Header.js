@@ -3,7 +3,7 @@ import styles from "./Header.module.scss";
 import { faSearch, faShoppingCart, faUser, faSortDown, faSignOutAlt, faShoppingBag, faHeart, faComment, faCircle, faUserCircle, faBars, faFireAlt, faTicketAlt, faPercent, faMapMarkerAlt} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../fonts/Iranian Sans.ttf";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useSearchParams } from "react-router-dom";
 import { LoginContext } from "../../data/GeneralInfo";
 
 import logo from "../../assets/images/logo.svg";
@@ -26,6 +26,12 @@ const HomePage = () => {
     }
   }, []);
 
+  const [searchParam, setsearchParam] = useSearchParams();
+  const searchHandler = (e) => {
+    let search = e.target.value;
+    setsearchParam({search})
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -39,6 +45,8 @@ const HomePage = () => {
             name=""
             id=""
             placeholder="جستجو در دیجی کالا..."
+            value={searchParam.get('search')}
+            onChange={searchHandler}
           />
           <FontAwesomeIcon icon={faSearch} className={styles.search} />
         </div>
