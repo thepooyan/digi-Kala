@@ -4,28 +4,20 @@ import { faSearch, faShoppingCart, faUser, faSortDown, faSignOutAlt, faShoppingB
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../fonts/Iranian Sans.ttf";
 import { Link, useSearchParams } from "react-router-dom";
-import { LoginContext } from "../../data/GeneralInfo";
+import { LoginContext } from "../../data/LoginContext";
 
 import logo from "../../assets/images/logo.svg";
 import QueryNavLink from "../../data/QueryNavLink";
 
 const HomePage = () => {
-  const [isLoggedIn, setIsLoggedIn] = useContext(LoginContext);
+  const [login,logout,isLoggedIn] = useContext(LoginContext);
   const [isLoginClicked, setIsLoginClicked] = useState(false);
 
   const loginClickHandler = () => {
     setIsLoginClicked(!isLoginClicked);
   };
-  const logOut = () => {
-    localStorage.setItem("isLoggedIn", false);
-    setIsLoggedIn(false);
-  };
 
-  useEffect(() => {
-    if (localStorage.getItem("isLoggedIn") === "true" && isLoggedIn === false) {
-      setIsLoggedIn(true);
-    }
-  }, []);
+  
 
   const [searchParam, setsearchParam] = useSearchParams();
   const searchHandler = (e) => {
@@ -70,7 +62,7 @@ const HomePage = () => {
                       icon={faUserCircle}
                       className={styles.mainIcon}
                     />
-                    <span className={styles.mainItem}>پویان سلمانی</span>
+                    <span className={styles.mainItem}>{isLoggedIn.nickname}</span>
                   </div>
                   <div className={styles.item}>
                     <FontAwesomeIcon className={styles.icon} icon={faCircle} />
@@ -92,7 +84,7 @@ const HomePage = () => {
                     <span>دیدگاه ها</span>
                   </div>
                   <div
-                    onClick={logOut}
+                    onClick={logout}
                     className={`${styles.item} ${styles.lastItem}`}
                   >
                     <FontAwesomeIcon

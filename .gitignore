@@ -10,6 +10,7 @@
 
 # production
 /build
+/0combiner
 
 # misc
 .DS_Store

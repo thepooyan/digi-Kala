@@ -6,7 +6,7 @@ import Content from "./components/content/Content";
 import EachProduct from "./components/eachProduct/EachProduct";
 import HomePage from "./components/homepage/HomePage";
 import Login from "./components/login/Login";
-import { LoginProvider } from "./data/GeneralInfo";
+import { LoginProvider } from "./data/LoginContext";
 import Store from './redux/productsStore'
 
 function App() {
