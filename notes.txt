@@ -8,3 +8,4 @@ fetch api and connection to the server
 app products and remove them. make redux functions. maybe multiple reducers?
 --      add each product comp
 make components smaller
+new user
