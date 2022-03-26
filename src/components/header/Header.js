@@ -66,7 +66,7 @@ const HomePage = () => {
                   </div>
                   <div className={styles.item}>
                     <FontAwesomeIcon className={styles.icon} icon={faCircle} />
-                    <span>فعال سازی کیف پول</span>
+                    <span>اضافه کردن محصول</span>
                   </div>
                   <div className={styles.item}>
                     <FontAwesomeIcon className={styles.icon} icon={faHeart} />
