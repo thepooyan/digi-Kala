@@ -23,7 +23,8 @@ const Product = (props) => {
     }
     
     return (
-    <div className={styles.card} onClick={navigate}>
+    <div className={styles.card}>
+        <div className={styles.clicker} onClick={navigate}>
         <img src={props.item.pic} alt={props.name} className={styles.img}/>
 
         <div className={styles.infoBox}>
@@ -35,6 +36,7 @@ const Product = (props) => {
             {props.item.seller && <p className={styles.seller}>
                 <FontAwesomeIcon icon={faFire}/>
                 پر‌فروش</p>}
+        </div>
         </div>
         {isLoggedIn.admin && <button className={styles.delete} onClick={deleteProduct}>Delete</button>}
     </div>
