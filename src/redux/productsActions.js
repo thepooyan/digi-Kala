@@ -8,3 +8,9 @@ export const AddProduct = (name, price, discount, seller, pic) => {
     pic: pic,
   };
 };
+export const DeleteProduct = (id) => {
+  return {
+    type: "DELETE_PRODUCT",
+    id: id,
+  };
+};

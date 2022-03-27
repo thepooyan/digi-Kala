@@ -4,6 +4,7 @@ import React, { useContext, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { LoginContext } from '../../data/LoginContext'
+import { DeleteProduct } from '../../redux/productsActions'
 import styles from './Product.module.scss'
 
 
@@ -18,7 +19,7 @@ const Product = (props) => {
         navigation(`/${props.item.id}`)
     }
     const deleteProduct = () => {
-        dispatch({type:'DELETE_PRODUCT',id:props.item.id})
+        dispatch(DeleteProduct(props.item.id))
     }
     
     return (
