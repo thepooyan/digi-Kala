@@ -8,14 +8,19 @@ import { LoginContext } from "../../data/LoginContext";
 
 import logo from "../../assets/images/logo.svg";
 import QueryNavLink from "../../data/QueryNavLink";
+import AddProductsModal from "../addProducts/AddProducts";
 
 const HomePage = () => {
   const [login,logout,isLoggedIn] = useContext(LoginContext);
   const [isLoginClicked, setIsLoginClicked] = useState(false);
+  const [addProductModal, setaddProductModal] = useState(false)
 
   const loginClickHandler = () => {
     setIsLoginClicked(!isLoginClicked);
   };
+  const expandAddProduct = () => {
+    setaddProductModal(true)
+  }
 
   
 
@@ -27,6 +32,7 @@ const HomePage = () => {
 
   return (
     <>
+    {addProductModal&&<AddProductsModal close={setaddProductModal}/>}
       <div className={styles.container}>
         <QueryNavLink to='/' className={styles.one}>
           <img src={logo} className={styles.logo}></img>
@@ -64,10 +70,11 @@ const HomePage = () => {
                     />
                     <span className={styles.mainItem}>{isLoggedIn.nickname}</span>
                   </div>
-                  <div className={styles.item}>
+                  <div className={styles.item} onClick={expandAddProduct}>
                     <FontAwesomeIcon className={styles.icon} icon={faCircle} />
                     <span>اضافه کردن محصول</span>
                   </div>
+                  
                   <div className={styles.item}>
                     <FontAwesomeIcon className={styles.icon} icon={faHeart} />
                     <span>لیست ها</span>
