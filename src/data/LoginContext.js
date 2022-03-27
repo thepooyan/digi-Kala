@@ -1,4 +1,6 @@
 import react, { useEffect, useState } from 'react'
+import { Provider, useSelector } from 'react-redux';
+import Store from '../redux/productsStore'
 export const LoginContext = react.createContext();
 
 export const LoginProvider = (props) => {
@@ -14,10 +16,8 @@ export const LoginProvider = (props) => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-    const users = [
-        {username:'pooyan',password:'1234',admin:true, nickname:'پویان سلمانی'},
-        {username:'sanee',password:'4321',admin:false, nickname:'محبوبه میرصانعی'}
-    ]
+    
+    const users = useSelector(state=>state.users)
 
     const login = (username,pass) => {
 

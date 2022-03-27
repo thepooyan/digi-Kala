@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 import Products from '../../products/Products';
 
 const Discounts = () => {
-    const products = useSelector(state=>state);
+    const products = useSelector(state=>state.products);
     const discount = products.filter(item=>item.discount>0)
     const [searchParam, setsearchParam] = useSearchParams()
 

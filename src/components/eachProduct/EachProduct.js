@@ -7,7 +7,7 @@ import styles from './EachProduct.module.scss'
 
 const EachProduct = () => {
     const ID = useParams();
-    const data = useSelector(state=>state)
+    const data = useSelector(state=>state.products)
     const product = data[ID.productID-1]
   return (
     <div className={styles.wrapper}>

@@ -5,7 +5,7 @@ import Products from '../products/Products';
 import Sample from '../sample/Sample';
 
 const Content = () => {
-  const products = useSelector(state=>state)
+  const products = useSelector(state=>state.products)
   const [searchParam, setsearchParam] = useSearchParams()
   
   
