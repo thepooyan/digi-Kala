@@ -28,6 +28,8 @@ const productsReducer = (state = INITIAL_STATE, action) => {
             if (action.price=='') price=0 
             else price = parseInt(action.price)
             return [...state,{id:state.length+1,  seller:action.seller, discount: discount, name:action.name , price:price ,  pic:action.pic}]
+        case 'DELETE_PRODUCT':
+            return state.filter(item=>item.id!=action.id)
     }
 }
 export default productsReducer

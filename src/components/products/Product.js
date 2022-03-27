@@ -1,6 +1,7 @@
 import { faFire } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { LoginContext } from '../../data/LoginContext'
 import styles from './Product.module.scss'
@@ -10,10 +11,14 @@ import styles from './Product.module.scss'
 const Product = (props) => {
     
     const [login,logout,isLoggedIn] = useContext(LoginContext);
+    const dispatch = useDispatch()
     
     const navigation = useNavigate();
     const navigate = () => {
         navigation(`/${props.item.id}`)
+    }
+    const deleteProduct = () => {
+        dispatch({type:'DELETE_PRODUCT',id:props.item.id})
     }
     
     return (
@@ -30,7 +35,7 @@ const Product = (props) => {
                 <FontAwesomeIcon icon={faFire}/>
                 پر‌فروش</p>}
         </div>
-        {isLoggedIn.admin && <button>Delete</button>}
+        {isLoggedIn.admin && <button className={styles.delete} onClick={deleteProduct}>Delete</button>}
     </div>
   )
 }
