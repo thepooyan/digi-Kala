@@ -22,8 +22,6 @@ const HomePage = () => {
     setaddProductModal(true)
   }
 
-  
-
   const [searchParam, setsearchParam] = useSearchParams();
   const searchHandler = (e) => {
     let search = e.target.value;
@@ -70,10 +68,10 @@ const HomePage = () => {
                     />
                     <span className={styles.mainItem}>{isLoggedIn.nickname}</span>
                   </div>
-                  <div className={styles.item} onClick={expandAddProduct}>
+                  {isLoggedIn.admin && <div className={styles.item} onClick={expandAddProduct}>
                     <FontAwesomeIcon className={styles.icon} icon={faCircle} />
                     <span>اضافه کردن محصول</span>
-                  </div>
+                  </div>}
                   
                   <div className={styles.item}>
                     <FontAwesomeIcon className={styles.icon} icon={faHeart} />

@@ -26,7 +26,6 @@ export const LoginProvider = (props) => {
                 if (item.username===username) return item
             }))
             if (!user) rejected('user not found')
-            console.log(user)
             if (pass == user.password) {
                 setIsLoggedIn(user)
                 localStorage.setItem('isLoggedIn', user.username)
