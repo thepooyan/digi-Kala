@@ -13,6 +13,7 @@ const INITIAL_STATE = [
     {id:10, seller: false, discount: 10,name:'Blackcberry', price:6000, pic:pic.blackberry},
     {id:11, seller: true, discount: 15,name:'xiaomy', price:6000, pic:pic.xiaomy},
     {id:12, seller: false, discount: 30,name:'Xbox', price:6000, pic:pic.xbox},
+    {id:13, seller: true, discount: 20,name:'اکبر عبدی', price:1400, pic:pic.akbar},
 ]
 
 const productsReducer = (state = INITIAL_STATE, action) => {
