@@ -1,14 +1,21 @@
 import { faFire } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { LoginContext } from '../../data/LoginContext'
 import styles from './Product.module.scss'
 
+
+
 const Product = (props) => {
+    
+    const [login,logout,isLoggedIn] = useContext(LoginContext);
+    
     const navigation = useNavigate();
     const navigate = () => {
         navigation(`/${props.item.id}`)
     }
+    
     return (
     <div className={styles.card} onClick={navigate}>
         <img src={props.item.pic} alt={props.name} className={styles.img}/>
@@ -23,7 +30,7 @@ const Product = (props) => {
                 <FontAwesomeIcon icon={faFire}/>
                 پر‌فروش</p>}
         </div>
-
+        {isLoggedIn.admin && <button>Delete</button>}
     </div>
   )
 }
