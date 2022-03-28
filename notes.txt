@@ -11,3 +11,4 @@ fetch api and connection to the server
 make components smaller
 new user
 not found comp and server errors and maybe for search
+remove user

@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from 'react'
 import styles from './Login.module.scss'
 import logo from '../../assets/images/logo.svg'
 import Button from '../general/Button'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { LoginContext } from '../../data/LoginContext'
 
 
@@ -52,8 +52,6 @@ const Login = () => {
             <img className={styles.logo} src={logo} alt="no" />
             <h2 className={styles.title}>
               <span>ورود</span>
-              <span>|</span>
-              <span>ثبت نام</span>
             </h2>
             <p>سلام!
               <br />
@@ -70,6 +68,10 @@ const Login = () => {
                و
               <a href="#"> قوانین حریم خصوصی </a>
                را می پذیرم
+              </p>
+              <p className={styles.agreement}>
+                اکانت ندارید؟ 
+                <Link to='/signup'>ثبت نام کنید</Link>
               </p>
             
         </form>

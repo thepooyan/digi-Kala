@@ -55,6 +55,15 @@
         }
       }
     }
+    .checkbox {
+      width: 15px !important;
+      display: inline !important;
+      & + span {
+        position: relative;
+        top: -17px;
+        right: 5px;
+      }
+    }
     .errorMassage {
       margin-top: 10px;
       display: inline-block;

@@ -5,6 +5,7 @@ import Content from "./components/content/Content";
 import EachProduct from "./components/eachProduct/EachProduct";
 import HomePage from "./components/homepage/HomePage";
 import Login from "./components/login/Login";
+import SignUp from "./components/login/SignUp";
 import AllProvider from "./data/AllProvider";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path=":productID" element={<EachProduct/>}/>
           </Route>
         <Route path="/login" element={<AllProvider><Login/></AllProvider>} />
+        <Route path="/signup" element={<AllProvider><SignUp/></AllProvider>} />
       </Routes>
     </Router>
   );
