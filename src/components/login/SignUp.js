@@ -4,6 +4,7 @@ import logo from "../../assets/images/logo.svg";
 import Button from "../general/Button";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { newUser } from "../../redux/usersActions";
 
 const SignUp = () => {
     const dispatch = useDispatch()
@@ -20,7 +21,7 @@ const SignUp = () => {
       setIsError("لطفا کادر ها را خالی نگذارید");
     } else {
         if (admin==undefined) admin = false        
-        dispatch({type:'NEW_USER', username:username.current.value, password:password.current.value, nickname:nickname.current.value, admin:admin})
+        dispatch(newUser(username.current.value, password.current.value, nickname.current.value, admin))
         navigate('/login')
     }
   };

@@ -21,7 +21,6 @@ const Product = (props) => {
     const deleteProduct = () => {
         dispatch(DeleteProduct(props.item.id))
     }
-    console.log(isLoggedIn)
     let isAdmin;
     if (isLoggedIn==undefined) {
         isAdmin = false

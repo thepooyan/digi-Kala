@@ -7,8 +7,8 @@ todo:
 --      app products and remove them. make redux functions. maybe multiple reducers?
 --      add each product comp
 --      new user
+--      remove user
 
 fetch api and connection to the server
 make components smaller
 not found comp and server errors and maybe for search
-remove user

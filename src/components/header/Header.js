@@ -9,11 +9,14 @@ import { LoginContext } from "../../data/LoginContext";
 import logo from "../../assets/images/logo.svg";
 import QueryNavLink from "../../data/QueryNavLink";
 import AddProductsModal from "../addProducts/AddProducts";
+import { useDispatch } from "react-redux";
+import { deleteUser } from "../../redux/usersActions";
 
 const HomePage = () => {
   const [login,logout,isLoggedIn] = useContext(LoginContext);
   const [isLoginClicked, setIsLoginClicked] = useState(false);
   const [addProductModal, setaddProductModal] = useState(false)
+  const dispatch = useDispatch()
 
   const loginClickHandler = () => {
     setIsLoginClicked(!isLoginClicked);
@@ -26,6 +29,11 @@ const HomePage = () => {
   const searchHandler = (e) => {
     let search = e.target.value;
     setsearchParam({search})
+  }
+
+  const deleteButton = () => {
+    dispatch(deleteUser(isLoggedIn.username))
+    logout()
   }
 
   return (
@@ -73,9 +81,9 @@ const HomePage = () => {
                     <span>اضافه کردن محصول</span>
                   </div>}
                   
-                  <div className={styles.item}>
-                    <FontAwesomeIcon className={styles.icon} icon={faHeart} />
-                    <span>لیست ها</span>
+                  <div className={styles.item} onClick={deleteButton}>
+                    <FontAwesomeIcon className= {styles.icon} icon={faHeart} />
+                    <span>حذف اکانت</span>
                   </div>
                   <div className={styles.item}>
                     <FontAwesomeIcon
