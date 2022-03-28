@@ -6,9 +6,11 @@ export const LoginContext = react.createContext();
 export const LoginProvider = (props) => {
 
     useEffect(() => {
-        if (localStorage.getItem("isLoggedIn") !== "false" && isLoggedIn === false) {
+        let storage = localStorage.getItem("isLoggedIn");
+        if (!storage) return
+        if (storage !== "false" && isLoggedIn === false) {
             let user = (users.find(item=>{
-                if (item.username===localStorage.getItem("isLoggedIn")) return item
+                if (item.username===storage) return item
             }))
           setIsLoggedIn(user);
         }

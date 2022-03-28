@@ -21,6 +21,13 @@ const Product = (props) => {
     const deleteProduct = () => {
         dispatch(DeleteProduct(props.item.id))
     }
+    console.log(isLoggedIn)
+    let isAdmin;
+    if (isLoggedIn==undefined) {
+        isAdmin = false
+    } else {
+        isAdmin = isLoggedIn.admin;
+    }
     
     return (
     <div className={styles.card}>
@@ -38,7 +45,7 @@ const Product = (props) => {
                 پر‌فروش</p>}
         </div>
         </div>
-        {isLoggedIn.admin && <button className={styles.delete} onClick={deleteProduct}>Delete</button>}
+        {isAdmin && <button className={styles.delete} onClick={deleteProduct}>Delete</button>}
     </div>
   )
 }
