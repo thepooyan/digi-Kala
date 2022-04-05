@@ -3,4 +3,22 @@
     border-radius: 12px;
     height: 100%;
     padding: 20px;
+    position: relative;
+    min-height: 200px;
+    .error {
+        text-align: center;
+    }
+    .title {
+        text-align: center;
+    }
+    .topSide {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .button {
+        position: absolute;
+        bottom: 10px;
+        width: 92%;
+    }
 }

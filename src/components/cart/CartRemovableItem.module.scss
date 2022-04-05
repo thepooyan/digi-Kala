@@ -1,0 +1,14 @@
+.wrapper {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin-bottom: 5px;
+    .remove {
+        padding: 3px;
+        &:hover {
+            color: #008eb2;
+            cursor: pointer;
+        }
+    }
+}

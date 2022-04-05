@@ -111,7 +111,7 @@ const HomePage = () => {
             </div>
           )}
           <div className={styles.border}></div>
-          <FontAwesomeIcon icon={faShoppingCart} className={styles.cart} />
+          <Link to='/cart'><FontAwesomeIcon icon={faShoppingCart} className={styles.cart} /></Link>
         </div>
       </div>
       <div className={styles.secondLayer}>

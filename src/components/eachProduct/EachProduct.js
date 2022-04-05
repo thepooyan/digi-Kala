@@ -20,7 +20,6 @@ const EachProduct = () => {
   })
 
   const addProduct = () => {
-    console.log(product)
     dispatch(addToCart(product))
     setisBought(true)
   }

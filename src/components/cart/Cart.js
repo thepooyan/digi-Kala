@@ -11,7 +11,7 @@ const Cart = () => {
   return (
     <div className={styles.wrapper}>
         <div className={styles.map}>
-            <Products data={cart}/>
+            <Products data={cart} noButton={true}/>
         </div>
         <div className={styles.cart}>
             <MyCart/>
