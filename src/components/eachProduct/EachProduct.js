@@ -5,14 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { addToCart } from "../../redux/cartActions";
 import Button from "../general/Button";
-import ProductsCart from "../productCart/ProductsCart";
 import styles from "./EachProduct.module.scss";
 
 const EachProduct = () => {
   const cart = useSelector(state=>state.cart)
   const ID = useParams();
   const data = useSelector((state) => state.products);
-  const product = data[ID.productID - 1];
+  const product = data.filter(item=>item.id==ID.productID)[0];
   const dispatch = useDispatch()
   const [isBought, setisBought] = useState(()=>{
     let cartFilter = cart.filter(item=>item.id==product.id)

@@ -7,6 +7,9 @@
     min-height: 200px;
     .error {
         text-align: center;
+        position: absolute;
+        bottom: 0;
+        right: 100px;
     }
     .title {
         text-align: center;

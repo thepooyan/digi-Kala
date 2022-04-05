@@ -7,6 +7,7 @@ import { LoginContext } from '../../data/LoginContext'
 import { DeleteProduct } from '../../redux/productsActions'
 import styles from './Product.module.scss'
 import Button from '../general/Button'  
+import {removeFromCart} from '../../redux/cartActions'
 
 
 
@@ -21,6 +22,7 @@ const Product = (props) => {
     }
     const deleteProduct = () => {
         dispatch(DeleteProduct(props.item.id))
+        dispatch(removeFromCart(props.item.id))
     }
     let isAdmin;
     if (isLoggedIn==undefined) {

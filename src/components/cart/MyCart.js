@@ -28,11 +28,12 @@ const MyCart = () => {
         <span>{wholePrice}</span>
       </div>
 
-      {cart.length==0?<h2 className={styles.error}>سبد خرید شما خالی میباشد!</h2>:''}
+      
       {cart.map((item) => {
         return <CartRemovableItem product={item} remove={remove}/>;
       })}
-      <Button className={styles.button}>ادامه</Button>
+      {cart.length==0?<h2 className={styles.error}>سبد خرید شما خالی میباشد!</h2>:<Button className={styles.button}>ادامه</Button>}
+      
     </div>
   );
 };
