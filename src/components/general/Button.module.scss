@@ -10,4 +10,10 @@
     &:hover {
         cursor: pointer;
     }
+    &.Off {
+        background-color: #ef4056a3;
+        &:hover {
+            cursor: initial;
+        }
+    }
 }
