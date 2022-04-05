@@ -1,8 +1,9 @@
 import { faFire } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
+import { LoginContext } from "../../data/LoginContext";
 import { addToCart } from "../../redux/cartActions";
 import Button from "../general/Button";
 import styles from "./EachProduct.module.scss";
@@ -13,13 +14,16 @@ const EachProduct = () => {
   const data = useSelector((state) => state.products);
   const product = data.filter(item=>item.id==ID.productID)[0];
   const dispatch = useDispatch()
+  const [login,logout,isLoggedIn] = useContext(LoginContext)
   const [isBought, setisBought] = useState(()=>{
-    let cartFilter = cart.filter(item=>item.id==product.id)
-    if (cartFilter.length!=0) {return true} else {return false}
+    if (isLoggedIn.username in cart == false) {return false} else {
+      let cartFilter = cart[isLoggedIn.username].filter(item=>item.id==product.id)
+      if (cartFilter.length!=0) {return true} else {return false}
+    }
   })
 
   const addProduct = () => {
-    dispatch(addToCart(product))
+    dispatch(addToCart(product, isLoggedIn.username))
     setisBought(true)
   }
 

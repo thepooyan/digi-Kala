@@ -5,8 +5,8 @@ import CartRemovableItem from "./CartRemovableItem";
 import styles from "./MyCart.module.scss";
 import Button from '../general/Button'
 
-const MyCart = () => {
-  const cart = useSelector((state) => state.cart);
+const MyCart = (props) => {
+  const cart = props.data
   const dispatch = useDispatch()
   let wholePrice=0;
   if (cart.length!=0) {
@@ -17,7 +17,7 @@ const MyCart = () => {
 
 
   const remove = (id) => {
-    dispatch(removeFromCart(id))
+    dispatch(removeFromCart(id,props.user))
   }
 
   return (
