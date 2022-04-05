@@ -17,7 +17,7 @@ const MyCart = (props) => {
 
 
   const remove = (id) => {
-    dispatch({type:'REMOVE_FROM_CART',id:id,user:props.user})
+    dispatch(removeFromCart(id,props.user))
   }
 
   return (

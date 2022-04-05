@@ -23,7 +23,7 @@ const EachProduct = () => {
   })
 
   const addProduct = () => {
-    dispatch({type:'ADD_TO_CART', product:product, user:isLoggedIn.username})
+    dispatch(addToCart(product, isLoggedIn.username))
     setisBought(true)
   }
 

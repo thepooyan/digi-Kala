@@ -1,12 +1,14 @@
-export const addToCart = (product) => {
+export const addToCart = (product,user) => {
     return {
         type:'ADD_TO_CART',
-        product: product
+        product: product,
+        user:user
     }
 }
-export const removeFromCart = (id) => {
+export const removeFromCart = (id,user) => {
     return {
         type:'REMOVE_FROM_CART',
-        id:id
+        id:id,
+        user:user
     }
 }
