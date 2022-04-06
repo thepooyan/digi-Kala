@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom'
 import { LoginContext } from '../../data/LoginContext'
 import { DeleteProduct } from '../../redux/productsActions'
 import styles from './Product.module.scss'
+import Button from '../general/Button'  
+import {removeFromCart} from '../../redux/cartActions'
 
 
 
@@ -20,6 +22,7 @@ const Product = (props) => {
     }
     const deleteProduct = () => {
         dispatch(DeleteProduct(props.item.id))
+        dispatch(removeFromCart(props.item.id))
     }
     let isAdmin;
     if (isLoggedIn==undefined) {
@@ -44,7 +47,9 @@ const Product = (props) => {
                 پر‌فروش</p>}
         </div>
         </div>
-        {isAdmin && <button className={styles.delete} onClick={deleteProduct}>Delete</button>}
+        <div className={styles.delete}>
+        {!props.noButton&&isAdmin&&<Button onClick={deleteProduct}>خذف از لیست محصولات</Button>}
+        </div>
     </div>
   )
 }

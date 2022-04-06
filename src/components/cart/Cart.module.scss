@@ -1,0 +1,11 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    .map {
+        flex: 7;
+    }
+    .cart {
+        flex: 3;
+    }
+}

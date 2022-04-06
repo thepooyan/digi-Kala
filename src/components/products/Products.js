@@ -7,7 +7,7 @@ const Products = (props) => {
     <div className={styles.wrapper}>
         {props.data.map((item,index)=>{
          return (
-             <Product item={item} index={index}/>
+             <Product noButton={props.noButton} item={item} index={index}/>
          )
         })}
     </div>
